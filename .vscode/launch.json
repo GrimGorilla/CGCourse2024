@@ -1,0 +1,13 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "C/C++ Runner: Debug Session",
+      "type": "lldb",
+      "request": "launch",
+      "args": [],
+      "cwd": "/Users/lorenzoavuri/Documents/CGCourse2024/src/code_00_raytracer",
+      "program": "/Users/lorenzoavuri/Documents/CGCourse2024/src/code_00_raytracer/build/Debug/outDebug"
+    }
+  ]
+}

@@ -119,7 +119,7 @@ hit_info hit_sphere(ray r, sphere s) {
 	return hit_info(t_min, s.color, N);
 }
 
-void main(int args, char ** argv) {
+int main(int args, char ** argv) {
 
 	image a(800,800);
 
@@ -198,4 +198,5 @@ void main(int args, char ** argv) {
 		}
 
 	a.save("rendering.ppm");
+	return 0;
 }
