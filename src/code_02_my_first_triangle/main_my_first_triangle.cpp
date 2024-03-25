@@ -2,7 +2,7 @@
 #include <GLFW/glfw3.h>
 #include <string>
 #include <iostream>
-#include "..\common\debugging.h"
+#include "../common/debugging.h"
  
 
 int main(void)
@@ -37,8 +37,8 @@ int main(void)
 	};
 	/* create a buffer for the render data in video RAM */
 	GLuint positionsBuffer;
-	glGenBuffers(1, &positionsBuffer);
-	glBindBuffer(GL_ARRAY_BUFFER, positionsBuffer);
+	glGenBuffers(1, &positionsBuffer); //memory buffer in GPU (di dimensione sconosciuta)
+	glBindBuffer(GL_ARRAY_BUFFER, positionsBuffer); 
 
 	/* declare what data in RAM are filling the bufferin video RAM */
 	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 6, positions, GL_STATIC_DRAW);
@@ -58,7 +58,8 @@ int main(void)
 	glBindBuffer(GL_ARRAY_BUFFER, colorsBuffer);
 
 	/* declare what data in RAM are filling the bufferin video RAM */
-	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 9, colors, GL_STATIC_DRAW);
+	glBufferData(GL_ARRAY_BUFFER, sizeof(float) * 9, colors, GL_STATIC_DRAW); //carica i dati nel buffer
+		//GL_STATIC_DRAW per dire che i dati non verranno modificati, ottimizza l'organizzazione dei dati
 	glEnableVertexAttribArray(colorAttribIndex);
 
 	/* specify the data format */
@@ -110,7 +111,8 @@ int main(void)
         /* Render here */
         glClear(GL_COLOR_BUFFER_BIT);
 
-		glDrawArrays(GL_TRIANGLES, 0, 3);
+		    //funzione invocata ad ogni frame
+		    glDrawArrays(GL_TRIANGLES, 0, 3);
 
         /* Swap front and back buffers */
         glfwSwapBuffers(window);
